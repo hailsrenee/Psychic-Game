@@ -8,6 +8,7 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
     var randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log(randomLetter);
 
+
     document.onkeydown = function(event) {
         var playerGuess = event.key;
 
@@ -24,39 +25,18 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 
         if (remaining === 0) {
             losses++;
-            guesses = [];
             remaining = 9;
-        }
-
-
-        if (guesses.indexOf(playerGuess) >= 0) {
-
-        } else {
-            guesses.push(playerGuess);
-            document.getElementById('playerGuess').innerHTML = remaining;
-            console.log(guesses);
+            guesses = [];
         }
 
         document.getElementById('won').innerHTML = wins;
         document.getElementById('lost').innerHTML = losses;
         document.getElementById('attempts').innerHTML = remaining;
-        document.getElementById('guessed').innerHTML = guesses;
+        document.getElementById('guessed').innerHTML = guesses.join(" ");
 
     }
 
-//    var html = 
-//    "<h1> The Psychic Game </h1>" +
-//    "<p>Guess what letter I'm thinking of!</p>" +
-//    "<p>Wins: " + wins + "</p>" +
-//    "<p>Losses: " + losses + "</p>" +
-//    "<p>Guesses Left: " + numGuesses + "</p>" +
-//    "<p>Your Guesses so far: " + guessChoices.join(", ") + "</p>";
 
-//    document.querySelector("#game").innerHTML = html;
-
-   
-//    }
-// };
 
 
   
